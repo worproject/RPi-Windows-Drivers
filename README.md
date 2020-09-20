@@ -16,14 +16,15 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 |Device|Driver|Status|Additional information|
 | --- | --- | --- | --- |
+|eMMC2 SDHCI|No driver available|_Not working_|a faster SD controller meant to replace SDHOST. Must be supported by the UEFI too.|
 |Arasan SD/SDIO Host Controller|bcm2836sdhc.sys|**Working**||
-|SD2.0 Host Controller|rpisdhc.sys|Untested|SDHOST can no longer be routed to the SD card slot|
+|SD2.0 Host Controller|rpisdhc.sys|Untested|SDHOST can no longer be routed to the SD card slot (but it's available on the GPIO header)|
 |GPIO|bcmgpio.sys|**Working**||
 |SPI|bcmspi.sys|Untested||
 |AUXSPI|bcmauxspi.sys|Untested||
 |I2C|bcmi2c.sys|Untested||
-|PWM|bcm2836pwm.sys|Untested||
-|Audio Jack (PWM-driven)|rpiwav.sys|_Not working_|wrong PWM peripheral used (should be PWM1 instead of PWM0)|
+|PWM|bcm2836pwm.sys|_Not working_|DMA issues? (not related to the 1 GB RAM constrain)|
+|Audio Jack (PWM-driven)|rpiwav.sys|_Not working_|depends on the PWM driver|
 |Mini UART|pi_miniuart.sys|**Working**||
 |PL011 UART|SerPL011.sys|Untested||
 |VC4 Mailbox Interface|rpiq.sys|**Working**||
@@ -33,7 +34,7 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |Basic Display Adapter (frame buffer)|MSBDD (Inbox)|**Working**||
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
 |VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|USB boot may randomly fail on more than 3 GB of RAM|
-|Broadcom GENET Gigabit Ethernet Controller|bcmgenet.sys|**Partially working**|only build 19041.X is currently supported|
+|Broadcom GENET Gigabit Ethernet Controller|bcmgenet.sys|**Partially working**|only builds 19041/19042 are currently supported|
 |BCM43455 Wireless LAN|No driver available|_Not working_||
 |BCM43455 UART Bluetooth|No driver available|_Not working_||
 
