@@ -34,7 +34,7 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |Basic Display Adapter (frame buffer)|MSBDD (Inbox)|**Working**||
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
 |VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|USB boot may randomly fail on more than 3 GB of RAM|
-|Broadcom GENET Gigabit Ethernet Controller|bcmgenet.sys|**Partially working**|only builds 19041/19042 are currently supported|
+|Broadcom GENET Gigabit Ethernet Controller|bcmgenet_netadapterXX.sys|**Working**|workaround: an older version of the driver will be installed on Windows 10 2004|
 |BCM43455 Wireless LAN|No driver available|_Not working_||
 |BCM43455 UART Bluetooth|No driver available|_Not working_||
 
