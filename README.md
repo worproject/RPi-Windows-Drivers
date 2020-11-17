@@ -26,7 +26,7 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |PWM|bcm2836pwm.sys|_Not working_|DMA issues? (not related to the 1 GB RAM constrain)|
 |Audio Jack (PWM-driven)|rpiwav.sys|_Not working_|depends on the PWM driver|
 |Mini UART|pi_miniuart.sys|**Working**||
-|PL011 UART|SerPL011.sys|Untested||
+|PL011 UART|SerPL011.sys|**Working**||
 |VC4 Mailbox Interface|rpiq.sys|**Working**||
 |VC4 Host Interface Queue|vchiq.sys|_Not working_||
 |VC4 GPU (Graphics)|roskmd.sys|_Not working_|the driver loads, but it doesn't do much as it's unfinished|
@@ -51,7 +51,7 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |PWM|bcm2836pwm.sys|**Working**||
 |Audio Jack (PWM-driven)|rpiwav.sys|**Working**||
 |Mini UART|pi_miniuart.sys|**Working**||
-|PL011 UART|SerPL011.sys|_Not working_||
+|PL011 UART|SerPL011.sys|**Working**||
 |VC4 Mailbox Interface|rpiq.sys|**Working**||
 |VC4 Host Interface Queue|vchiq.sys|_Not working_||
 |VC4 GPU (Graphics)|roskmd.sys|_Not working_|the driver loads, but it doesn't do much as it's unfinished|
