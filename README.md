@@ -12,6 +12,8 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 ## Status
 
+**Note: for experimental Bluetooth support on RPi3/4 see: https://github.com/worproject/RPi-Bluetooth-Testing**
+
 ### Raspberry Pi 4 (ARM64)
 
 |Device|Driver|Status|Additional information|
@@ -35,8 +37,8 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
 |VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|USB boot may randomly fail on more than 3 GB of RAM|
 |Broadcom GENET Gigabit Ethernet Controller|bcmgenet_netadapterXX.sys|**Working**|workaround: an older version of the driver will be installed on Windows 10 2004|
-|BCM43455 Wireless LAN|No driver available|_Not working_||
-|BCM43455 UART Bluetooth|No driver available|_Not working_||
+|CYW43455 Wireless LAN|No driver available|_Not working_||
+|CYW43455 UART Bluetooth|cywbtserialbus.sys|**Partially working**|the bus speed is limited until hardware flow control support is added in the PL011 driver|
 
 ### Raspberry Pi 3 (ARM64)
 
@@ -60,9 +62,9 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Working**||
 |LAN9514 USB Ethernet Adapter|lan9500-arm64-n650f.sys|**Working**|Ethernet support for RPi 3 B|
 |LAN7515 USB Ethernet Adapter|lan7800-arm64-n650f.sys|**Working**|Ethernet support for RPi 3 B+|
-|BCM43438 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B|
-|BCM43455 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B+|
-|BCM43438/BCM43455 UART Bluetooth|No driver available|_Not working_||
+|CYW43438 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B|
+|CYW43455 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B+|
+|CYW43438/CYW43455 UART Bluetooth|cywbtserialbus.sys|Untested|the bus speed is limited until hardware flow control support is added in the PL011 driver|
 
 ### Raspberry Pi 3 (ARM32)
 
