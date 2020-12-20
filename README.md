@@ -14,6 +14,11 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 **Note: for experimental Bluetooth support on RPi3/4 see: https://github.com/worproject/RPi-Bluetooth-Testing**
 
+### Raspberry Pi 400 (ARM64)
+No official UEFI support at the moment. Windows can be booted with this modified version: https://github.com/andreiw/bins (without USB and Bluetooth support).
+
+Apart from that, driver support is the same as on a Raspberry Pi 4.
+
 ### Raspberry Pi 4 (ARM64)
 
 |Device|Driver|Status|Additional information|
