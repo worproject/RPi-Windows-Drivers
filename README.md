@@ -64,7 +64,8 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |LAN7515 USB Ethernet Adapter|lan7800-arm64-n650f.sys|**Working**|Ethernet support for RPi 3 B+|
 |CYW43438 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B|
 |CYW43455 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B+|
-|CYW43438/CYW43455 UART Bluetooth|cywbtserialbus.sys|Untested|the bus speed is limited until hardware flow control support is added in the PL011 driver|
+|CYW43438 UART Bluetooth|cywbtserialbus.sys|**Partially working**|Bluetooth support for RPi 3 B -> the bus speed is limited as the RTS/CTS lines are not exposed (the driver may crash regardless)|
+|CYW43455 UART Bluetooth|cywbtserialbus.sys|**Partially working**|Bluetooth support for RPi 3 B+ -> the bus speed is limited until hardware flow control support is added in the PL011 driver|
 
 ### Raspberry Pi 3 (ARM32)
 
@@ -72,7 +73,6 @@ Same as the ARM64 version, with some differences:
 
 |Device|Driver|Status|Additional information|
 | --- | --- | --- | --- |
-|PL011 UART|SerPL011.sys|**Working**||
 |VC4 Host Interface Queue|vchiq.sys|_Partially working_|crashes after some usage (tested using a few userland apps ported by Microsoft)|
 |DesignWare HS USB 2.0 OTG Controller|dwchsotg_hcd.sys, dwchsotg_hub.sys|**Working**||
 |LAN9514 USB Ethernet Adapter|lan9500-arm-n650f.sys|**Working**|Ethernet support for RPi 3 B|
