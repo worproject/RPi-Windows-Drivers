@@ -12,18 +12,11 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 ## Status
 
-**Note: for experimental Bluetooth support on RPi3/4 see: https://github.com/worproject/RPi-Bluetooth-Testing**
-
-### Raspberry Pi 400 (ARM64)
-No official UEFI support at the moment. Windows can be booted with this modified version: https://github.com/andreiw/bins (without USB and Bluetooth support).
-
-Apart from that, driver support is the same as on a Raspberry Pi 4.
-
-### Raspberry Pi 4 (ARM64)
+### Raspberry Pi 4 / 400 (ARM64)
 
 |Device|Driver|Status|Additional information|
 | --- | --- | --- | --- |
-|eMMC2 SDHCI|No driver available|_Not working_|a faster SD controller meant to replace SDHOST. Must be supported by the UEFI too.|
+|eMMC2 SDHCI|sdbus.sys (bcmemmc2.inf)|**Partially working**|a faster SD controller meant to replace SDHOST. No DMA, HS200/HS400 and UHS-I support at the moment.|
 |Arasan SD/SDIO Host Controller|bcm2836sdhc.sys|**Working**||
 |SD2.0 Host Controller|rpisdhc.sys|Untested|SDHOST can no longer be routed to the SD card slot (but it's available on the GPIO header)|
 |GPIO|bcmgpio.sys|**Working**||
@@ -40,8 +33,8 @@ Apart from that, driver support is the same as on a Raspberry Pi 4.
 |HDMI Audio|No driver available|_Not working_||
 |Basic Display Adapter (frame buffer)|MSBDD (Inbox)|**Working**||
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
-|VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|USB boot may randomly fail on more than 3 GB of RAM|
-|Broadcom GENET Gigabit Ethernet Controller|bcmgenet_netadapterXX.sys|**Working**|workaround: an older version of the driver will be installed on Windows 10 2004|
+|VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|workaround: UASP support is disabled as it prevents booting from USB 3.0 drives. The filter driver also reduces transfer speeds quite significantly.|
+|Broadcom GENET Gigabit Ethernet Controller|bcmgenet_netadapterXX.sys|**Working**|due to the fact that the NetAdapterCx API is unstable, there are 3 versions of this driver: one for build 19041/2, one for builds 19536 up to 21296, and the last one for builds 21301 and newer (the latter is unstable)|
 |CYW43455 Wireless LAN|No driver available|_Not working_||
 |CYW43455 UART Bluetooth|cywbtserialbus.sys|**Partially working**|the bus speed is limited until hardware flow control support is added in the PL011 driver|
 
