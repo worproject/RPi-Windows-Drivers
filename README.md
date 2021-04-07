@@ -1,7 +1,7 @@
 # Windows on ARM(64) device drivers for the Raspberry Pi platform
 This repository is currently used only for publishing binary releases: https://github.com/worproject/RPi-Windows-Drivers/releases
 
-The source code for some of the prebuilt drivers can be found here: https://github.com/driver1998/bsp
+The source code for some of the prebuilt drivers can be found here: https://github.com/raspberrypi/windows-drivers
 
 ## Notes
 * most of the drivers require the *Test Signing mode* to be enabled.
@@ -22,9 +22,9 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |GPIO|bcmgpio.sys|**Working**||
 |SPI|bcmspi.sys|Untested||
 |AUXSPI|bcmauxspi.sys|Untested||
-|I2C|bcmi2c.sys|Untested||
-|PWM|bcm2836pwm.sys|_Not working_|DMA issues? (not related to the 1 GB RAM constrain)|
-|Audio Jack (PWM-driven)|rpiwav.sys|_Not working_|depends on the PWM driver|
+|I2C|bcmi2c.sys|**Working**||
+|PWM|bcm2836pwm.sys|**Working**||
+|Audio Jack (PWM-driven)|rpiwav.sys|**Working**||
 |Mini UART|pi_miniuart.sys|**Working**||
 |PL011 UART|SerPL011.sys|**Working**||
 |VC4 Mailbox Interface|rpiq.sys|**Working**||
