@@ -20,8 +20,8 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |Arasan SD/SDIO Host Controller|bcm2836sdhc.sys|**Working**||
 |SD2.0 Host Controller|rpisdhc.sys|Untested|SDHOST can no longer be routed to the SD card slot (but it's available on the GPIO header)|
 |GPIO|bcmgpio.sys|**Working**||
-|SPI|bcmspi.sys|Untested||
-|AUXSPI|bcmauxspi.sys|Untested||
+|SPI|bcmspi.sys|**Working**||
+|AUXSPI|bcmauxspi.sys|**Working**||
 |I2C|bcmi2c.sys|**Working**||
 |PWM|bcm2836pwm.sys|**Working**||
 |Audio Jack (PWM-driven)|rpiwav.sys|**Working**||
