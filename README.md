@@ -10,6 +10,8 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 * drivers included in the latest release that can't be found in the "bsp" repository above were either extracted from old builds of Windows 10 IoT Core (ARM32 binaries) or recompiled for ARM64 by their developers (thanks to [MCCI](https://mcci.com) and [Microchip](https://www.microchip.com)).
 
+* some of the new drivers / features are not yet open-sourced because the code needs to be heavily refactored. It's good enough to "get the thing working", but it can't be used as a base for further development. Watch the repository above for updates on this.
+
 ## Status
 
 ### Raspberry Pi 4 / 400 (ARM64)
