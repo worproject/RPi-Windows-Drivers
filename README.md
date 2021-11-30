@@ -30,13 +30,13 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |VC4 Mailbox Interface|rpiq.sys|**Working**||
 |VC4 Host Interface Queue|vchiq.sys|_Not working_||
 |VC4 GPU (Graphics)|roskmd.sys|_Not working_|the driver loads, but it doesn't do much as it's unfinished|
-|HDMI Audio|No driver available|_Not working_||
+|HDMI Audio|rpi4hdmiwav.sys, rpi4hdmiwavbridge.sys|**Partially working**|only the HDMI0 port (next to USB-C) is supported|
 |Basic Display Adapter (frame buffer)|MSBDD (Inbox)|**Working**||
 |DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
 |VIA VL805 XHCI Host Controller|rpiuxflt.sys (USBXHCI.SYS filter)|**Partially working**|workaround: UASP support is disabled as it prevents booting from USB 3.0 drives. The filter driver also reduces transfer speeds quite significantly.|
 |Broadcom GENET Gigabit Ethernet Controller|bcmgenet_netadapterXX.sys|**Working**|due to the fact that the NetAdapterCx API is unstable, there are 3 versions of this driver: one for build 19041/2, one for builds 19536 up to 21296, and the last one for builds 21301 and newer|
 |CYW43455 Wireless LAN|No driver available|_Not working_||
-|CYW43455 UART Bluetooth|cywbtserialbus.sys|**Partially working**|the bus speed is limited until hardware flow control support is added in the PL011 driver|
+|CYW43455 UART Bluetooth|cywbtserialbus.sys|**Working**||
 
 ### Raspberry Pi 3 (ARM64)
 
