@@ -12,7 +12,26 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 
 * some of the new drivers / features are not yet open-sourced because the code needs to be heavily refactored. It's good enough to "get the thing working", but it can't be used as a base for further development. Watch the repository above for updates on this.
 
+### To UEFI / driver developers
+The driver package for Raspberry Pi 4 installs a DSDT & SSDT table override that:
+* changes the _HIDs of the
+  * PL011 controller to BCM2887
+  * XHCI controller to RPI0D10
+  
+  so Windows won't install the incompatible inbox drivers instead of our own versions. This is not necessary if the drivers are properly signed.
+* fixes the PWM definition and adds an analog audio device
+* adds dummy HDMI controller and digital audio devices
+
+For ACPI changes in the UEFI to take effect, you need to uninstall this override by deleting `dsdtpatch` from the package or the `ACPITABL.dat` file from `%SystemRoot%\System32\`. As a result, Bluetooth, audio and the USB filter driver may stop working.
+
 ## Status
+
+### (Official) peripherals
+|Device|Driver|Status|Additional information|
+| --- | --- | --- | --- |
+|7-inch DSI touch screen|Display: firmware-controlled, Touch: no driver available|**Partially working**|Only the display works, but the resolution may be wrong. See the RPi docs for details on how to change it through config.txt.|
+|CSI Camera Module|No driver available|_Not working_||
+|3-pin case fan|UEFI-controlled|**Partially working**|Fan control can be enabled in the UEFI settings, but it will always stay on due to temperature control not working in Windows|
 
 ### Raspberry Pi 4 / 400 (ARM64)
 
@@ -66,16 +85,3 @@ The source code for some of the prebuilt drivers can be found here: https://gith
 |CYW43455 Wireless LAN|No driver available|_Not working_|WLAN support for RPi 3 B+|
 |CYW43438 UART Bluetooth|cywbtserialbus.sys|**Partially working**|Bluetooth support for RPi 3 B -> the bus speed is limited as the RTS/CTS lines are not exposed (the driver may crash regardless)|
 |CYW43455 UART Bluetooth|cywbtserialbus.sys|**Partially working**|Bluetooth support for RPi 3 B+ -> the bus speed is limited until hardware flow control support is added in the PL011 driver|
-
-### Raspberry Pi 3 (ARM32)
-
-Same as the ARM64 version, with some differences:
-
-|Device|Driver|Status|Additional information|
-| --- | --- | --- | --- |
-|VC4 Host Interface Queue|vchiq.sys|_Partially working_|crashes after some usage (tested using a few userland apps ported by Microsoft)|
-|DesignWare HS USB 2.0 OTG Controller|dwchsotg_hcd.sys, dwchsotg_hub.sys|**Working**||
-|LAN9514 USB Ethernet Adapter|lan9500-arm-n650f.sys|**Working**|Ethernet support for RPi 3 B|
-|LAN7515 USB Ethernet Adapter|lan7800-arm-n650f.sys|**Working**|Ethernet support for RPi 3 B+|
-|BCM43438 Wireless LAN|bcmdhd63.sys|**Working**|WLAN support for RPi 3 B|
-|BCM43438 UART Bluetooth|BtwSerialH5Bus.sys|**Working**|depends on the PL011 UART driver|
