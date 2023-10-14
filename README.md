@@ -33,6 +33,12 @@ For ACPI changes in the UEFI to take effect, you need to uninstall this override
 |CSI Camera Module|No driver available|_Not working_||
 |3-pin case fan|UEFI-controlled|**Partially working**|Fan control can be enabled in the UEFI settings, but it will always stay on due to temperature control not working in Windows|
 
+### Raspberry Pi 5 (ARM64)
+
+|Device|Driver|Status|Additional information|
+| --- | --- | --- | --- |
+| NO  NO | NO | NO |
+
 ### Raspberry Pi 4 / 400 (ARM64)
 
 |Device|Driver|Status|Additional information|
