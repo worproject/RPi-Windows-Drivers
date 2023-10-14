@@ -37,7 +37,7 @@ For ACPI changes in the UEFI to take effect, you need to uninstall this override
 
 |Device|Driver|Status|Additional information|
 | --- | --- | --- | --- |
-| NO  NO | NO | NO |
+| NO | NO | NO | NO |
 
 ### Raspberry Pi 4 / 400 (ARM64)
 
