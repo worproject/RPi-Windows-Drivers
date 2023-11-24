@@ -37,7 +37,26 @@ For ACPI changes in the UEFI to take effect, you need to uninstall this override
 
 |Device|Driver|Status|Additional information|
 | --- | --- | --- | --- |
-| NO | NO | NO | NO |
+|SDHCI|sdbus.sys |**Partially working**| 12.5MB/s only No DMA, HS200/HS400 and UHS-I support at the moment.|
+|GPIO|bcmgpio.sys|**Working**||
+|SPI|bcmspi.sys|**Working**||
+|AUXSPI|bcmauxspi.sys|**Working**||
+|I2C|bcmi2c.sys|**Working**||
+|PWM|bcm2836pwm.sys|**Working**||
+|Audio Jack (PWM-driven)|rpiwav.sys|**Working**||
+|Mini UART|pi_miniuart.sys|**Working**||
+|PL011 UART|SerPL011.sys|**Working**||
+|VC4 Mailbox Interface|rpiq.sys|**Working**||
+|VC7 Host Interface Queue|vchiq.sys|_Not working_||
+|VC7 GPU (Graphics)|roskmd.sys|_Not working_|the driver loads, but it doesn't do much as it's unfinished|
+|HDMI Audio|rpi4hdmiwav.sys, rpi4hdmiwavbridge.sys|**Partially working**|only the HDMI0 port is supported (next to the USB-C port on RPi 4 or the SD card slot on RPi 400)|
+|Basic Display Adapter (frame buffer)|MSBDD (Inbox)|**Working**||
+|DesignWare HS USB 2.0 OTG Controller|mcci_dwchsotg_hcd.sys, mcci_dwchsotg_hub.sys|**Partially working**|RAM must be limited to 1 GB|
+|RP1| | **Partially working**| See below|
+|XHCI Host Controllers in RP1| USBXHCI.SYS|**Working**| |
+|Gigabit Ethernet Controller in RP1 |No driver available|_Not working_||
+|CYW43455 Wireless LAN|No driver available|_Not working_||
+|CYW43455 UART Bluetooth|cywbtserialbus.sys|**Working**||
 
 ### Raspberry Pi 4 / 400 (ARM64)
 
